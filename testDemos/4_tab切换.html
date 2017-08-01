@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="testCss/public.css">
+    <link rel="stylesheet" href="testCss/common.css">
+
+    <style type="text/css">
+        *{ font-family: "Microsoft yahei";}
+        .switchTabs li{  padding: 0 10px; border: 1px solid #ddd; size: 14px; color: #333;  height: 50px; line-height: 50px;
+            cursor: pointer;
+        }
+        .switchTabs li.on{ background: #ff7300; color: #fff;}
+    </style>
+</head>
+<body>
+<h2 class="F18 bT_S1 PT20 textCenter MT20">没有传递事件参数</h2>1
+<div class="wMain MT20 clearfix swicthMain">
+    <div class="H400 wPct20">
+        <ul class="switchTabs clearfix">
+            <li class="on">首页</li>
+            <li>test2</li>
+            <li>test3</li>
+            <li>test 4</li>
+            <li>test5</li>
+        </ul>
+    </div>
+    <div class="switchCons wPct70 H400 bB_S1 overHide">
+        <!-- item -->
+        <div class="H400 p_label_bg1">
+            <h2 class="F18"> 这是首页</h2>
+        </div>
+        <div class="H400 p_label_bg2" >
+            <h2 class="F18"> tese2
+                <br>
+                test2
+                test2
+            </h2>
+        </div>
+        <div class="H400 p_label_bg3">
+            <h2 class="F18"> test3
+                <br>
+                test3
+            </h2>
+        </div>
+        <div class="H400 p_label_bg4">
+            <h2 class="F18">
+            test4
+                <br>
+                test4
+            </h2>
+        </div>
+        <div class="H400 p_label_bg5">
+            <h2 class="F18">test5
+                <br>
+            test5
+            </h2>
+        </div>
+    </div>
+</div>
+
+<h2 class="F18 bT_S1 PT20 textCenter MT20">click事件</h2>
+<div class="wMain MT20 clearfix swicthMainTest2">
+    <div class="H400 wPct20">
+        <ul class="switchTabs clearfix">
+            <li class="on">首页</li>
+            <li>test2</li>
+            <li>test3</li>
+            <li>test 4</li>
+            <li>test5</li>
+        </ul>
+    </div>
+    <div class="switchCons wPct70 H400 bB_S1 overHide">
+        <!-- item -->
+        <div class="H400 p_label_bg1">
+            <h2 class="F18"> 这是首页</h2>
+        </div>
+        <div class="H400 p_label_bg2" >
+            <h2 class="F18"> tese2
+                <br>
+                test2
+                test2
+            </h2>
+        </div>
+        <div class="H400 p_label_bg3">
+            <h2 class="F18"> test3
+                <br>
+                test3
+            </h2>
+        </div>
+        <div class="H400 p_label_bg4">
+            <h2 class="F18">
+                test4
+                <br>
+                test4
+            </h2>
+        </div>
+        <div class="H400 p_label_bg5">
+            <h2 class="F18">test5
+                <br>
+                test5
+            </h2>
+        </div>
+    </div>
+</div>
+<h2 class="F18 bT_S1 PT20 textCenter MT20">mouseenter  </h2>1
+<div class="wMain MT20 clearfix swicthMain swicthMainTest3" >
+    <div class="H400 wPct20">
+        <ul class="switchTabs clearfix">
+            <li class="on">首页</li>
+            <li>test2</li>
+            <li>test3</li>
+            <li>test 4</li>
+            <li>test5</li>
+        </ul>
+    </div>
+    <div class="switchCons wPct70 H400 bB_S1 overHide">
+        <!-- item -->
+        <div class="H400 p_label_bg1">
+            <h2 class="F18"> 这是首页</h2>
+        </div>
+        <div class="H400 p_label_bg2" >
+            <h2 class="F18"> tese2
+                <br>
+                test2
+                test2
+            </h2>
+        </div>
+        <div class="H400 p_label_bg3">
+            <h2 class="F18"> test3
+                <br>
+                test3
+            </h2>
+        </div>
+        <div class="H400 p_label_bg4">
+            <h2 class="F18">
+                test4
+                <br>
+                test4
+            </h2>
+        </div>
+        <div class="H400 p_label_bg5">
+            <h2 class="F18">test5
+                <br>
+                test5
+            </h2>
+        </div>
+    </div>
+</div>
+
+</body>
+<script type="text/javascript" src="../js/jquery-1.8.0.min.js"></script>
+<script type="text/javascript">
+    (function ($) {
+        $.fn.extend({
+            //tab切换内容（也就是包含切换按钮跟切换内容的区域）
+            switchContext:function (options) {
+                var $switchs=$(this);
+                if($switchs.length){
+                    $switchs.each(function (i) {
+                        var _this=$switchs[i];
+                        var defaults={
+                            switchTabs:"",      //切换按钮用于 switchTabs.ul>li结构
+                            switchCons:"",      //切换的内容区域 用于switchCons >div结构
+                            switchEvent:"click" //默认切换事件是click事件
+                        };
+                        //把option参数合并到defaults中，并把defaults赋值给  options
+                        options=$.extend(defaults,options);
+                        var $tabs=$(_this).find(options.switchTabs);
+                        var $cons=$(_this).find(options.switchCons);
+                        var $consItems=$cons.children("*");        //获得直接孩子children()只考虑子元素而不考虑所有后代元素。
+                        var ind=0;
+                        var eventName=options.switchEvent;
+                        $tabs.find("li").on(eventName,function () {
+                            ind=$(this).index();
+                            $consItems.eq(ind).show().siblings().hide();
+                            $(this).addClass("on").siblings().removeClass("on");
+                        });
+                    });
+                }
+            }
+        });
+    })(jQuery);
+$(function () {
+    //switchContext     switchTabs  switchCons   这三个 是必填项    switchEvent可选项
+    $(".swicthMain").switchContext({
+        switchTabs:".switchTabs",      //切换按钮用于 switchTabs.ul>li结构
+        switchCons:".switchCons"     //切换的内容区域 用于switchCons >div结构
+        //switchEvent:"mouseenter"       //默认切换事件是click事件  可以传递参数 mouseenter
+    });
+
+    $(".swicthMainTest2").switchContext({
+        switchTabs:".switchTabs",      //切换按钮用于 switchTabs.ul>li结构
+        switchCons:".switchCons",      //切换的内容区域 用于switchCons >div结构
+        switchEvent:"click"             //默认切换事件是click事件  可以传递参数 mouseenter
+    });
+    $(".swicthMainTest3").switchContext({
+        switchTabs:".switchTabs",      //切换按钮用于 switchTabs.ul>li结构
+        switchCons:".switchCons",      //切换的内容区域 用于switchCons >div结构
+        switchEvent:"mouseenter"       //默认切换事件是click事件  可以传递参数 mouseenter
+    });
+
+});
+
+</script>
+
+
+</html>

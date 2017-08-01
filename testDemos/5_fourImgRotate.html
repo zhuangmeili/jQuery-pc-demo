@@ -1,0 +1,801 @@
+
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>  这是一个特殊的排版  通栏中应用</title>
+    <link rel="stylesheet" href="../css/common/common.css"/>
+    <style type="text/css">
+        /*  */
+        .c1006-row1-Wrap{width:1190px; margin: 12px auto 0;  }
+        .c1006-row1-Head { height:55px; line-height:55px; overflow:hidden;}
+        .c1006-row1-Head h2 { height:55px; line-height:55px; font-size:20px; font-family:"宋体"; font-weight:normal; color:#252525; float:left;}
+        .c1006-row1-Head .more { font-size: 15px; height:55px; line-height:55px; float:right; background:url(../fodder/c1006/c1006-row1-bg2.jpg) no-repeat right center; overflow:hidden; padding-right:15px;}
+        .c1006-row1-Head .more a { color:#f6bb00; font-weight:normal;}
+        .c1006-row1-Main {height:340px; overflow:hidden;*position: relative;/*IE7下overflow:hidden bug*/}
+        .c1006-row1-Con{ width: 1600px;}
+        .c1006-row1-ConLi { float:left; overflow:hidden;  height:340px;position:relative; width: 205px;}
+        .c1006-row1-ConLiLeft {position: absolute; left: 0; top: 0; width: 205px; height: 340px;}
+        .c1006-row1-ConLiLeftImgBox{ display: block; width: 100%; height: 100%;}
+        .c1006-row1-ConLiLeftImgBox img{ width: 100%; height: 100%;}
+        .c1006-row1-ConLiL-topOut{ width:182px; height:103px; border:1px solid #fff; bottom:22px; left:11px; position: absolute;}
+        .c1006-row1-ConLiL-topIn{ width:167px; height:88px; border:1px solid #eee; background: #f5cdaa; opacity:0.4; filter: alpha(opacity=40); position:absolute; top:6px; left:6px;}
+        /* on的情况下*/
+        .c1006-row1-Con li.on  .c1006-row1-ConLiL-topIn{background: #a8da9f; }
+        .c1006-row1-ConLiL-topInTxt { position:absolute; top:22px; left:16px; height:60px; overflow:hidden;line-height:30px;font-size:22px; color:#fff;}
+        .c1006-row1-ConLiRight { width:338px; height:318px; overflow:hidden; background:#f8f8f8; padding:22px 16px 0; display:block; position: absolute;  left: 205px; top: 0;}
+        .c1006-row1-ConLiRTop { width:340px; height:124px; overflow:hidden; margin-bottom:22px;}
+        .c1006-row1-ConLiRTop dt { width:97px; height:124px; float:left;background:url("../fodder/c1006/c1006-row1-bg1.jpg") no-repeat;text-align:center; overflow:hidden;}
+        .c1006-row1-ConLiRTop .adress{width:70px; display:block;  font-size:18px;color:#fb5016; padding: 34px 0 0px 13px; height:44px; line-height: 22px; overflow:hidde已升级到最新版本n; }
+        .c1006-row1-ConLiRTop dd{ width:230px; height:124px; overflow:hidden; float:right;}
+        .c1006-row1-ConLiRTop dd .passage { font-size:14px; color:#555; line-height:24px; height:96px; overflow:hidden;}
+        .c1006-row1-ConLiRTop dd .title { font-size: 14px;  height:20px; line-height:20px; display:block; margin-top:10px; color:#555;float:left;}
+        .c1006-row1-ConLiRTop dd .left {height:20px; width:10px; background:url("../fodder/c1006/c1006-row1-bg3.png") no-repeat 0 0; display:block;float:left; margin:10px 0 0 11px; }
+        .c1006-row1-ConLiRTop dd .label { margin-top:10px; height:20px; line-height:20px; display:block; color:#fff; float:left; background:#fb5016;}
+        .c1006-row1-ConLiRTop dd .right { margin-top:10px;height:20px; width:10px; background:url("../fodder/c1006/c1006-row1-bg3.png") no-repeat 0 -30px; display:block; float:left;}
+        .c1006-row1-ConLiRBtm { width:340px; height:150px;padding-left: 5px; }
+        .c1006-row1-ConLiRBtm .c1006-row1-ConLiRBtm-ImgBox{ float: left; width:150px; height: 150px; overflow: hidden;margin-right: 20px;}
+        .c1006-row1-ConLiRBtm-ImgBox img{ width: 100%; height: 100%;transition:all 1s ; -webkit-transition:all 0.5s ;  -moz-transition: all 1s ; -o-transition: all 1s ;  -ms-transition: all 1s ;}
+        .c1006-row1-ConLiRBtm-ImgBox:hover img{ transform:scale(1.1);-moz-transform:scale(1.1);-webkit-transform:scale(1.1);-o-transform:scale(1.1);-ms-transform:scale(1.1);}
+
+        /*企业人物*/
+        .c1006-row22-Wrap{width:1190px;margin:20px auto 0; padding-top:10px;  border-top:1px solid #efefef; font-size: 14px; overflow: hidden;}
+        .c1006-row22-Head{ height:60px; overflow:hidden;}
+        .c1006-row22-Head h2{ float:left; height:60px; line-height:60px; color:#333; font-size:40px; font-family:"microsoft yahei"; font-weight:normal;}
+        .c1006-row22-Head div{ float:left; margin-left:21px; display:inline;  width:927px; height:24px; line-height:24px; overflow:hidden; margin-top:31px;}
+        .c1006-row22-Head div.info{ color:#888;  text-align:left;}
+        .c1006-row22-Head div a{ margin-left:18px; color:#727272;}
+        .c1006-row22-Head div a:hover{ color:#ff7300;}
+        .c1006-row22-Head .more { float:right; width:80px; margin:32px 0 0;}
+        .c1006-row22-Body{ height: 280px; overflow: hidden; margin-top: 20px; margin-right: -200px;}
+        .c1006-row22-item{ float: left; margin-right: 30px; overflow: hidden; position: relative; cursor: pointer;}
+        .c1006-row22-itemLeft{ display: block; float: left; width: 210px; height:280px; overflow: hidden;}
+        .c1006-row22-itemLeft img{ width: 100%; height: 100%;}
+        .c1006-row22-itemRight{position: absolute;left: 0; top: 0; margin-left: 210px; width: 260px; background: #f8f8f8;  }
+        .c1006-row22-itemR_Con{ height: 260px;padding:10px 25px 8px 25px; border: 1px solid #e5e5e5 }
+        .c1006-row22-itemR_tit{ height: 50px; line-height: 50px;  overflow: hidden;border-bottom: 1px solid #e5e5e5;  }
+        .c1006-row22-itemR_tit a{ font-size: 14px; font-weight: bold;color: #555;}
+        .c1006-row22-itemR_Txt{ font-size: 14px; height: 30px; line-height: 30px; padding: 10px 0 5px 8px; color: #999; }
+        .c1006-row22-itemR_Txt .name{ color: #ff7300;}
+        .c1006-row22-itemR_passage{ word-break: break-all; font-size: 14px; height: 140px; overflow: hidden;line-height: 24px; color: #999;  }
+
+
+    </style>
+
+</head>
+<body>
+<div class="c1006-row1-Wrap">
+    <div class="c1006-row1-Head">
+        <h2>品牌推荐</h2>
+        <div class="more"><a href="" title="">更多</a></div>
+    </div>
+    <div class="c1006-row1-Main">
+        <ul class="c1006-row1-Con clearfix jQ_slideMenu ">
+            <li class="c1006-row1-ConLi on" style="width:575px;">
+                <!-- left -->
+                <div class=" c1006-row1-ConLiLeft">
+                    <a class="c1006-row1-ConLiLeftImgBox">
+                        <img src="../fodder/c1006/row1_1.jpg" />
+                    </a>
+                    <div class="c1006-row1-ConLiL-topOut">
+                        <div class="c1006-row1-ConLiL-topIn"></div>
+                        <a class="c1006-row1-ConLiL-topInTxt" href="" title="">青岛容悦食品有限公司</a>
+                    </div>
+                </div>
+                <!-- right -->
+                <div class=" c1006-row1-ConLiRight">
+                    <div class="c1006-row1-ConLiRTop">
+                        <dl class="clearfix">
+                            <dt class="floatL"><span class="adress">恒润食恒润食品品</span></dt>
+                            <dd class="floatR">
+                                <p class="passage">1莱阳恒润食品有限公司是建于1994年5月，主要从事各类农产品的生产加工和销售，产品有保鲜果蔬、冷冻果蔬、VF食品、调理食品等200多个品种。</p>
+                                <div class="clearfix">
+                                    <span class="title">主要产品</span>
+                                    <i class="left"></i>
+                                    <a class="label" href="">保鲜果蔬</a>
+                                    <i class="right"></i>
+                                </div>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="c1006-row1-ConLiRBtm clearfix">
+                        <a class="c1006-row1-ConLiRBtm-ImgBox" href="" title=""><img src="../fodder/c1006/row1_2.jpg" /></a>
+                        <a class="c1006-row1-ConLiRBtm-ImgBox" href="" title=""><img src="../fodder/c1006/row1_2.jpg" /></a>
+                    </div>
+                </div>
+
+            </li>
+            <li class="c1006-row1-ConLi ">
+                <!-- left -->
+                <div class=" c1006-row1-ConLiLeft">
+                    <a class="c1006-row1-ConLiLeftImgBox">
+                        <img src="../fodder/c1006/row1_1.jpg" />
+                    </a>
+                    <div class="c1006-row1-ConLiL-topOut">
+                        <div class="c1006-row1-ConLiL-topIn"></div>
+                        <a class="c1006-row1-ConLiL-topInTxt" href="" title="">青岛容悦食品有限公司</a>
+                    </div>
+                </div>
+                <!-- right -->
+                <div class=" c1006-row1-ConLiRight">
+                    <div class="c1006-row1-ConLiRTop">
+                        <dl class="clearfix">
+                            <dt class="floatL"><span class="adress">恒润食恒润食品品</span></dt>
+                            <dd class="floatR">
+                                <p class="passage">1莱阳恒润食品有限公司是建于1994年5月，主要从事各类农产品的生产加工和销售，产品有保鲜果蔬、冷冻果蔬、VF食品、调理食品等200多个品种。</p>
+                                <div class="clearfix">
+                                    <span class="title">主要产品</span>
+                                    <i class="left"></i>
+                                    <a class="label" href="">保鲜果蔬</a>
+                                    <i class="right"></i>
+                                </div>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="c1006-row1-ConLiRBtm clearfix">
+                        <a class="c1006-row1-ConLiRBtm-ImgBox" href="" title=""><img src="../fodder/c1006/row1_2.jpg" /></a>
+                        <a class="c1006-row1-ConLiRBtm-ImgBox" href="" title=""><img src="../fodder/c1006/row1_2.jpg" /></a>
+                    </div>
+                </div>
+
+            </li>
+            <li class="c1006-row1-ConLi ">
+                <!-- left -->
+                <div class=" c1006-row1-ConLiLeft">
+                    <a class="c1006-row1-ConLiLeftImgBox">
+                        <img src="../fodder/c1006/row1_1.jpg" />
+                    </a>
+                    <div class="c1006-row1-ConLiL-topOut">
+                        <div class="c1006-row1-ConLiL-topIn"></div>
+                        <a class="c1006-row1-ConLiL-topInTxt" href="" title="">青岛容悦食品有限公司</a>
+                    </div>
+                </div>
+                <!-- right -->
+                <div class=" c1006-row1-ConLiRight">
+                    <div class="c1006-row1-ConLiRTop">
+                        <dl class="clearfix">
+                            <dt class="floatL"><span class="adress">恒润食恒润食品品</span></dt>
+                            <dd class="floatR">
+                                <p class="passage">1莱阳恒润食品有限公司是建于1994年5月，主要从事各类农产品的生产加工和销售，产品有保鲜果蔬、冷冻果蔬、VF食品、调理食品等200多个品种。</p>
+                                <div class="clearfix">
+                                    <span class="title">主要产品</span>
+                                    <i class="left"></i>
+                                    <a class="label" href="">保鲜果蔬</a>
+                                    <i class="right"></i>
+                                </div>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="c1006-row1-ConLiRBtm clearfix">
+                        <a class="c1006-row1-ConLiRBtm-ImgBox" href="" title=""><img src="../fodder/c1006/row1_2.jpg" /></a>
+                        <a class="c1006-row1-ConLiRBtm-ImgBox" href="" title=""><img src="../fodder/c1006/row1_2.jpg" /></a>
+                    </div>
+                </div>
+
+            </li>
+            <li class="c1006-row1-ConLi ">
+                <!-- left -->
+                <div class=" c1006-row1-ConLiLeft">
+                    <a class="c1006-row1-ConLiLeftImgBox">
+                        <img src="../fodder/c1006/row1_1.jpg" />
+                    </a>
+                    <div class="c1006-row1-ConLiL-topOut">
+                        <div class="c1006-row1-ConLiL-topIn"></div>
+                        <a class="c1006-row1-ConLiL-topInTxt" href="" title="">青岛容悦食品有限公司</a>
+                    </div>
+                </div>
+                <!-- right -->
+                <div class=" c1006-row1-ConLiRight">
+                    <div class="c1006-row1-ConLiRTop">
+                        <dl class="clearfix">
+                            <dt class="floatL"><span class="adress">恒润食恒润食品品</span></dt>
+                            <dd class="floatR">
+                                <p class="passage">1莱阳恒润食品有限公司是建于1994年5月，主要从事各类农产品的生产加工和销售，产品有保鲜果蔬、冷冻果蔬、VF食品、调理食品等200多个品种。</p>
+                                <div class="clearfix">
+                                    <span class="title">主要产品</span>
+                                    <i class="left"></i>
+                                    <a class="label" href="">保鲜果蔬</a>
+                                    <i class="right"></i>
+                                </div>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="c1006-row1-ConLiRBtm clearfix">
+                        <a class="c1006-row1-ConLiRBtm-ImgBox" href="" title=""><img src="../fodder/c1006/row1_2.jpg" /></a>
+                        <a class="c1006-row1-ConLiRBtm-ImgBox" href="" title=""><img src="../fodder/c1006/row1_2.jpg" /></a>
+                    </div>
+                </div>
+
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="c1006-row1-Wrap">
+    <div class="c1006-row1-Head">
+        <h2>品牌推荐</h2>
+        <div class="more"><a href="" title="">更多</a></div>
+    </div>
+    <div class="c1006-row1-Main">
+        <ul class="c1006-row1-Con clearfix jQ_slideMenu ">
+            <li class="c1006-row1-ConLi on" style="width:575px;">
+                <!-- left -->
+                <div class=" c1006-row1-ConLiLeft">
+                    <a class="c1006-row1-ConLiLeftImgBox">
+                        <img src="../fodder/c1006/row1_1.jpg" />
+                    </a>
+                    <div class="c1006-row1-ConLiL-topOut">
+                        <div class="c1006-row1-ConLiL-topIn"></div>
+                        <a class="c1006-row1-ConLiL-topInTxt" href="" title="">青岛容悦食品有限公司</a>
+                    </div>
+                </div>
+                <!-- right -->
+                <div class=" c1006-row1-ConLiRight">
+                    <div class="c1006-row1-ConLiRTop">
+                        <dl class="clearfix">
+                            <dt class="floatL"><span class="adress">恒润食恒润食品品</span></dt>
+                            <dd class="floatR">
+                                <p class="passage">1莱阳恒润食品有限公司是建于1994年5月，主要从事各类农产品的生产加工和销售，产品有保鲜果蔬、冷冻果蔬、VF食品、调理食品等200多个品种。</p>
+                                <div class="clearfix">
+                                    <span class="title">主要产品</span>
+                                    <i class="left"></i>
+                                    <a class="label" href="">保鲜果蔬</a>
+                                    <i class="right"></i>
+                                </div>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="c1006-row1-ConLiRBtm clearfix">
+                        <a class="c1006-row1-ConLiRBtm-ImgBox" href="" title=""><img src="../fodder/c1006/row1_2.jpg" /></a>
+                        <a class="c1006-row1-ConLiRBtm-ImgBox" href="" title=""><img src="../fodder/c1006/row1_2.jpg" /></a>
+                    </div>
+                </div>
+
+            </li>
+            <li class="c1006-row1-ConLi ">
+                <!-- left -->
+                <div class=" c1006-row1-ConLiLeft">
+                    <a class="c1006-row1-ConLiLeftImgBox">
+                        <img src="../fodder/c1006/row1_1.jpg" />
+                    </a>
+                    <div class="c1006-row1-ConLiL-topOut">
+                        <div class="c1006-row1-ConLiL-topIn"></div>
+                        <a class="c1006-row1-ConLiL-topInTxt" href="" title="">青岛容悦食品有限公司</a>
+                    </div>
+                </div>
+                <!-- right -->
+                <div class=" c1006-row1-ConLiRight">
+                    <div class="c1006-row1-ConLiRTop">
+                        <dl class="clearfix">
+                            <dt class="floatL"><span class="adress">恒润食恒润食品品</span></dt>
+                            <dd class="floatR">
+                                <p class="passage">1莱阳恒润食品有限公司是建于1994年5月，主要从事各类农产品的生产加工和销售，产品有保鲜果蔬、冷冻果蔬、VF食品、调理食品等200多个品种。</p>
+                                <div class="clearfix">
+                                    <span class="title">主要产品</span>
+                                    <i class="left"></i>
+                                    <a class="label" href="">保鲜果蔬</a>
+                                    <i class="right"></i>
+                                </div>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="c1006-row1-ConLiRBtm clearfix">
+                        <a class="c1006-row1-ConLiRBtm-ImgBox" href="" title=""><img src="../fodder/c1006/row1_2.jpg" /></a>
+                        <a class="c1006-row1-ConLiRBtm-ImgBox" href="" title=""><img src="../fodder/c1006/row1_2.jpg" /></a>
+                    </div>
+                </div>
+
+            </li>
+            <li class="c1006-row1-ConLi ">
+                <!-- left -->
+                <div class=" c1006-row1-ConLiLeft">
+                    <a class="c1006-row1-ConLiLeftImgBox">
+                        <img src="../fodder/c1006/row1_1.jpg" />
+                    </a>
+                    <div class="c1006-row1-ConLiL-topOut">
+                        <div class="c1006-row1-ConLiL-topIn"></div>
+                        <a class="c1006-row1-ConLiL-topInTxt" href="" title="">青岛容悦食品有限公司</a>
+                    </div>
+                </div>
+                <!-- right -->
+                <div class=" c1006-row1-ConLiRight">
+                    <div class="c1006-row1-ConLiRTop">
+                        <dl class="clearfix">
+                            <dt class="floatL"><span class="adress">恒润食恒润食品品</span></dt>
+                            <dd class="floatR">
+                                <p class="passage">1莱阳恒润食品有限公司是建于1994年5月，主要从事各类农产品的生产加工和销售，产品有保鲜果蔬、冷冻果蔬、VF食品、调理食品等200多个品种。</p>
+                                <div class="clearfix">
+                                    <span class="title">主要产品</span>
+                                    <i class="left"></i>
+                                    <a class="label" href="">保鲜果蔬</a>
+                                    <i class="right"></i>
+                                </div>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="c1006-row1-ConLiRBtm clearfix">
+                        <a class="c1006-row1-ConLiRBtm-ImgBox" href="" title=""><img src="../fodder/c1006/row1_2.jpg" /></a>
+                        <a class="c1006-row1-ConLiRBtm-ImgBox" href="" title=""><img src="../fodder/c1006/row1_2.jpg" /></a>
+                    </div>
+                </div>
+
+            </li>
+            <li class="c1006-row1-ConLi ">
+                <!-- left -->
+                <div class=" c1006-row1-ConLiLeft">
+                    <a class="c1006-row1-ConLiLeftImgBox">
+                        <img src="../fodder/c1006/row1_1.jpg" />
+                    </a>
+                    <div class="c1006-row1-ConLiL-topOut">
+                        <div class="c1006-row1-ConLiL-topIn"></div>
+                        <a class="c1006-row1-ConLiL-topInTxt" href="" title="">青岛容悦食品有限公司</a>
+                    </div>
+                </div>
+                <!-- right -->
+                <div class=" c1006-row1-ConLiRight">
+                    <div class="c1006-row1-ConLiRTop">
+                        <dl class="clearfix">
+                            <dt class="floatL"><span class="adress">恒润食恒润食品品</span></dt>
+                            <dd class="floatR">
+                                <p class="passage">1莱阳恒润食品有限公司是建于1994年5月，主要从事各类农产品的生产加工和销售，产品有保鲜果蔬、冷冻果蔬、VF食品、调理食品等200多个品种。</p>
+                                <div class="clearfix">
+                                    <span class="title">主要产品</span>
+                                    <i class="left"></i>
+                                    <a class="label" href="">保鲜果蔬</a>
+                                    <i class="right"></i>
+                                </div>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="c1006-row1-ConLiRBtm clearfix">
+                        <a class="c1006-row1-ConLiRBtm-ImgBox" href="" title=""><img src="../fodder/c1006/row1_2.jpg" /></a>
+                        <a class="c1006-row1-ConLiRBtm-ImgBox" href="" title=""><img src="../fodder/c1006/row1_2.jpg" /></a>
+                    </div>
+                </div>
+
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+<div class="c1006-row1-Wrap">
+    <div class="c1006-row1-Head">
+        <h2>品牌推荐</h2>
+        <div class="more"><a href="" title="">更多</a></div>
+    </div>
+    <div class="c1006-row1-Main">
+        <ul class="c1006-row1-Con clearfix  " id="testSlide">
+            <li class="c1006-row1-ConLi on" style="width:575px;">
+                <!-- left -->
+                <div class=" c1006-row1-ConLiLeft">
+                    <a class="c1006-row1-ConLiLeftImgBox">
+                        <img src="../fodder/c1006/row1_1.jpg" />
+                    </a>
+                    <div class="c1006-row1-ConLiL-topOut">
+                        <div class="c1006-row1-ConLiL-topIn"></div>
+                        <a class="c1006-row1-ConLiL-topInTxt" href="" title="">青岛容悦食品有限公司</a>
+                    </div>
+                </div>
+                <!-- right -->
+                <div class=" c1006-row1-ConLiRight">
+                    <div class="c1006-row1-ConLiRTop">
+                        <dl class="clearfix">
+                            <dt class="floatL"><span class="adress">恒润食恒润食品品</span></dt>
+                            <dd class="floatR">
+                                <p class="passage">1莱阳恒润食品有限公司是建于1994年5月，主要从事各类农产品的生产加工和销售，产品有保鲜果蔬、冷冻果蔬、VF食品、调理食品等200多个品种。</p>
+                                <div class="clearfix">
+                                    <span class="title">主要产品</span>
+                                    <i class="left"></i>
+                                    <a class="label" href="">保鲜果蔬</a>
+                                    <i class="right"></i>
+                                </div>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="c1006-row1-ConLiRBtm clearfix">
+                        <a class="c1006-row1-ConLiRBtm-ImgBox" href="" title=""><img src="../fodder/c1006/row1_2.jpg" /></a>
+                        <a class="c1006-row1-ConLiRBtm-ImgBox" href="" title=""><img src="../fodder/c1006/row1_2.jpg" /></a>
+                    </div>
+                </div>
+
+            </li>
+            <li class="c1006-row1-ConLi ">
+                <!-- left -->
+                <div class=" c1006-row1-ConLiLeft">
+                    <a class="c1006-row1-ConLiLeftImgBox">
+                        <img src="../fodder/c1006/row1_1.jpg" />
+                    </a>
+                    <div class="c1006-row1-ConLiL-topOut">
+                        <div class="c1006-row1-ConLiL-topIn"></div>
+                        <a class="c1006-row1-ConLiL-topInTxt" href="" title="">青岛容悦食品有限公司</a>
+                    </div>
+                </div>
+                <!-- right -->
+                <div class=" c1006-row1-ConLiRight">
+                    <div class="c1006-row1-ConLiRTop">
+                        <dl class="clearfix">
+                            <dt class="floatL"><span class="adress">恒润食恒润食品品</span></dt>
+                            <dd class="floatR">
+                                <p class="passage">1莱阳恒润食品有限公司是建于1994年5月，主要从事各类农产品的生产加工和销售，产品有保鲜果蔬、冷冻果蔬、VF食品、调理食品等200多个品种。</p>
+                                <div class="clearfix">
+                                    <span class="title">主要产品</span>
+                                    <i class="left"></i>
+                                    <a class="label" href="">保鲜果蔬</a>
+                                    <i class="right"></i>
+                                </div>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="c1006-row1-ConLiRBtm clearfix">
+                        <a class="c1006-row1-ConLiRBtm-ImgBox" href="" title=""><img src="../fodder/c1006/row1_2.jpg" /></a>
+                        <a class="c1006-row1-ConLiRBtm-ImgBox" href="" title=""><img src="../fodder/c1006/row1_2.jpg" /></a>
+                    </div>
+                </div>
+
+            </li>
+            <li class="c1006-row1-ConLi ">
+                <!-- left -->
+                <div class=" c1006-row1-ConLiLeft">
+                    <a class="c1006-row1-ConLiLeftImgBox">
+                        <img src="../fodder/c1006/row1_1.jpg" />
+                    </a>
+                    <div class="c1006-row1-ConLiL-topOut">
+                        <div class="c1006-row1-ConLiL-topIn"></div>
+                        <a class="c1006-row1-ConLiL-topInTxt" href="" title="">青岛容悦食品有限公司</a>
+                    </div>
+                </div>
+                <!-- right -->
+                <div class=" c1006-row1-ConLiRight">
+                    <div class="c1006-row1-ConLiRTop">
+                        <dl class="clearfix">
+                            <dt class="floatL"><span class="adress">恒润食恒润食品品</span></dt>
+                            <dd class="floatR">
+                                <p class="passage">1莱阳恒润食品有限公司是建于1994年5月，主要从事各类农产品的生产加工和销售，产品有保鲜果蔬、冷冻果蔬、VF食品、调理食品等200多个品种。</p>
+                                <div class="clearfix">
+                                    <span class="title">主要产品</span>
+                                    <i class="left"></i>
+                                    <a class="label" href="">保鲜果蔬</a>
+                                    <i class="right"></i>
+                                </div>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="c1006-row1-ConLiRBtm clearfix">
+                        <a class="c1006-row1-ConLiRBtm-ImgBox" href="" title=""><img src="../fodder/c1006/row1_2.jpg" /></a>
+                        <a class="c1006-row1-ConLiRBtm-ImgBox" href="" title=""><img src="../fodder/c1006/row1_2.jpg" /></a>
+                    </div>
+                </div>
+
+            </li>
+            <li class="c1006-row1-ConLi ">
+                <!-- left -->
+                <div class=" c1006-row1-ConLiLeft">
+                    <a class="c1006-row1-ConLiLeftImgBox">
+                        <img src="../fodder/c1006/row1_1.jpg" />
+                    </a>
+                    <div class="c1006-row1-ConLiL-topOut">
+                        <div class="c1006-row1-ConLiL-topIn"></div>
+                        <a class="c1006-row1-ConLiL-topInTxt" href="" title="">青岛容悦食品有限公司</a>
+                    </div>
+                </div>
+                <!-- right -->
+                <div class=" c1006-row1-ConLiRight">
+                    <div class="c1006-row1-ConLiRTop">
+                        <dl class="clearfix">
+                            <dt class="floatL"><span class="adress">恒润食恒润食品品</span></dt>
+                            <dd class="floatR">
+                                <p class="passage">1莱阳恒润食品有限公司是建于1994年5月，主要从事各类农产品的生产加工和销售，产品有保鲜果蔬、冷冻果蔬、VF食品、调理食品等200多个品种。</p>
+                                <div class="clearfix">
+                                    <span class="title">主要产品</span>
+                                    <i class="left"></i>
+                                    <a class="label" href="">保鲜果蔬</a>
+                                    <i class="right"></i>
+                                </div>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="c1006-row1-ConLiRBtm clearfix">
+                        <a class="c1006-row1-ConLiRBtm-ImgBox" href="" title=""><img src="../fodder/c1006/row1_2.jpg" /></a>
+                        <a class="c1006-row1-ConLiRBtm-ImgBox" href="" title=""><img src="../fodder/c1006/row1_2.jpg" /></a>
+                    </div>
+                </div>
+
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="c1006-row22-Wrap">
+    <!-- head -->
+    <div class="c1006-row22-Head">
+        <h2>企业人物</h2>
+        <div class="info">
+            在这里高手云集、人才辈出；分享的都是纯粹的工作分享、经验分享；
+        </div>
+        <div class="more">
+            <a href=""  title="更多" target="_blank">更多</a>
+        </div>
+
+    </div>
+    <!-- body -->
+    <div class="c1006-row22-Body   ">
+        <ul class=" clearfix testSlide">
+            <!--list1  默认第一个数据展开  width:470px;-->
+            <li class="c1006-row22-item  clearfix " style="width: 470px;" >
+                <a class="c1006-row22-itemLeft " href="#" target="_blank" title="">
+                    <img src="http://img4.99114.com/group1/M00/49/97/wKgGTFYwRLWACGZDAAGPnlOh0i4518.jpg" alt="企业人物图片"/>
+                </a>
+                <div class="c1006-row22-itemRight ">
+                    <div class="c1006-row22-itemR_Con">
+                        <h2 class="c1006-row22-itemR_tit">
+                            <a href="#" target="_blank">陇南宕昌县黄芪等中药材种植面积已达40万亩</a>
+                        </h2>
+                        <dl>
+                            <dt class="c1006-row22-itemR_Txt">本期专家：<span class="name">蔡妍</span></dt>
+                            <dd class="c1006-row22-itemR_passage"> 8月11日，宕昌县阿坞乡一户药农正在自家地里采收黄芪籽。据了解，宕昌县目前中药材种植面积已达40万亩，去年全县药材总产量约7.8万吨，总产值达5.3亿元以上，农民从药材中人均收入可达1833元。...
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+            </li>
+            <!--list1-->
+            <li class="c1006-row22-item  clearfix " >
+                <a class="c1006-row22-itemLeft " href="#" target="_blank" title="">
+                    <img src="http://img4.99114.com/group1/M00/49/97/wKgGTFYwRLWACGZDAAGPnlOh0i4518.jpg" alt="企业人物图片"/>
+                </a>
+                <div class="c1006-row22-itemRight ">
+                    <div class="c1006-row22-itemR_Con">
+                        <h2 class="c1006-row22-itemR_tit">
+                            <a href="#" target="_blank">陇南宕昌县黄芪等中药材种植面积已达40万亩</a>
+                        </h2>
+                        <dl>
+                            <dt class="c1006-row22-itemR_Txt">本期专家：<span class="name">蔡妍</span></dt>
+                            <dd class="c1006-row22-itemR_passage"> 8月11日，宕昌县阿坞乡一户药农正在自家地里采收黄芪籽。据了解，宕昌县目前中药材种植面积已达40万亩，去年全县药材总产量约7.8万吨，总产值达5.3亿元以上，农民从药材中人均收入可达1833元。...
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+            </li>
+            <!--list1-->
+            <li class="c1006-row22-item  clearfix " >
+                <a class="c1006-row22-itemLeft " href="#" target="_blank" title="">
+                    <img src="http://img4.99114.com/group1/M00/49/97/wKgGTFYwRLWACGZDAAGPnlOh0i4518.jpg" alt="企业人物图片"/>
+                </a>
+                <div class="c1006-row22-itemRight ">
+                    <div class="c1006-row22-itemR_Con">
+                        <h2 class="c1006-row22-itemR_tit">
+                            <a href="#" target="_blank">陇南宕昌县黄芪等中药材种植面积已达40万亩</a>
+                        </h2>
+                        <dl>
+                            <dt class="c1006-row22-itemR_Txt">本期专家：<span class="name">蔡妍</span></dt>
+                            <dd class="c1006-row22-itemR_passage"> 8月11日，宕昌县阿坞乡一户药农正在自家地里采收黄芪籽。据了解，宕昌县目前中药材种植面积已达40万亩，去年全县药材总产量约7.8万吨，总产值达5.3亿元以上，农民从药材中人均收入可达1833元。...
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+            </li>
+            <!--list1-->
+            <li class="c1006-row22-item  clearfix " >
+                <a class="c1006-row22-itemLeft " href="#" target="_blank" title="">
+                    <img src="http://img4.99114.com/group1/M00/49/97/wKgGTFYwRLWACGZDAAGPnlOh0i4518.jpg" alt="企业人物图片"/>
+                </a>
+                <div class="c1006-row22-itemRight ">
+                    <div class="c1006-row22-itemR_Con">
+                        <h2 class="c1006-row22-itemR_tit">
+                            <a href="#" target="_blank">陇南宕昌县黄芪等中药材种植面积已达40万亩</a>
+                        </h2>
+                        <dl>
+                            <dt class="c1006-row22-itemR_Txt">本期专家：<span class="name">蔡妍</span></dt>
+                            <dd class="c1006-row22-itemR_passage"> 8月11日，宕昌县阿坞乡一户药农正在自家地里采收黄芪籽。据了解，宕昌县目前中药材种植面积已达40万亩，去年全县药材总产量约7.8万吨，总产值达5.3亿元以上，农民从药材中人均收入可达1833元。...
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+            </li>
+            <!--list-->
+        </ul>
+    </div>
+</div>
+<div class="c1006-row22-Wrap">
+    <!-- head -->
+    <div class="c1006-row22-Head">
+        <h2>企业人物</h2>
+        <div class="info">
+            在这里高手云集、人才辈出；分享的都是纯粹的工作分享、经验分享；
+        </div>
+        <div class="more">
+            <a href=""  title="更多" target="_blank">更多</a>
+        </div>
+
+    </div>
+    <!-- body -->
+    <div class="c1006-row22-Body   ">
+        <ul class=" clearfix testSlide">
+            <!--list1  默认第一个数据展开  width:470px;-->
+            <li class="c1006-row22-item  clearfix " style="width: 470px;" >
+                <a class="c1006-row22-itemLeft " href="#" target="_blank" title="">
+                    <img src="http://img4.99114.com/group1/M00/49/97/wKgGTFYwRLWACGZDAAGPnlOh0i4518.jpg" alt="企业人物图片"/>
+                </a>
+                <div class="c1006-row22-itemRight ">
+                    <div class="c1006-row22-itemR_Con">
+                        <h2 class="c1006-row22-itemR_tit">
+                            <a href="#" target="_blank">陇南宕昌县黄芪等中药材种植面积已达40万亩</a>
+                        </h2>
+                        <dl>
+                            <dt class="c1006-row22-itemR_Txt">本期专家：<span class="name">蔡妍</span></dt>
+                            <dd class="c1006-row22-itemR_passage"> 8月11日，宕昌县阿坞乡一户药农正在自家地里采收黄芪籽。据了解，宕昌县目前中药材种植面积已达40万亩，去年全县药材总产量约7.8万吨，总产值达5.3亿元以上，农民从药材中人均收入可达1833元。...
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+            </li>
+            <!--list1-->
+            <li class="c1006-row22-item  clearfix " >
+                <a class="c1006-row22-itemLeft " href="#" target="_blank" title="">
+                    <img src="http://img4.99114.com/group1/M00/49/97/wKgGTFYwRLWACGZDAAGPnlOh0i4518.jpg" alt="企业人物图片"/>
+                </a>
+                <div class="c1006-row22-itemRight ">
+                    <div class="c1006-row22-itemR_Con">
+                        <h2 class="c1006-row22-itemR_tit">
+                            <a href="#" target="_blank">陇南宕昌县黄芪等中药材种植面积已达40万亩</a>
+                        </h2>
+                        <dl>
+                            <dt class="c1006-row22-itemR_Txt">本期专家：<span class="name">蔡妍</span></dt>
+                            <dd class="c1006-row22-itemR_passage"> 8月11日，宕昌县阿坞乡一户药农正在自家地里采收黄芪籽。据了解，宕昌县目前中药材种植面积已达40万亩，去年全县药材总产量约7.8万吨，总产值达5.3亿元以上，农民从药材中人均收入可达1833元。...
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+            </li>
+            <!--list1-->
+            <li class="c1006-row22-item  clearfix " >
+                <a class="c1006-row22-itemLeft " href="#" target="_blank" title="">
+                    <img src="http://img4.99114.com/group1/M00/49/97/wKgGTFYwRLWACGZDAAGPnlOh0i4518.jpg" alt="企业人物图片"/>
+                </a>
+                <div class="c1006-row22-itemRight ">
+                    <div class="c1006-row22-itemR_Con">
+                        <h2 class="c1006-row22-itemR_tit">
+                            <a href="#" target="_blank">陇南宕昌县黄芪等中药材种植面积已达40万亩</a>
+                        </h2>
+                        <dl>
+                            <dt class="c1006-row22-itemR_Txt">本期专家：<span class="name">蔡妍</span></dt>
+                            <dd class="c1006-row22-itemR_passage"> 8月11日，宕昌县阿坞乡一户药农正在自家地里采收黄芪籽。据了解，宕昌县目前中药材种植面积已达40万亩，去年全县药材总产量约7.8万吨，总产值达5.3亿元以上，农民从药材中人均收入可达1833元。...
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+            </li>
+            <!--list1-->
+            <li class="c1006-row22-item  clearfix " >
+                <a class="c1006-row22-itemLeft " href="#" target="_blank" title="">
+                    <img src="http://img4.99114.com/group1/M00/49/97/wKgGTFYwRLWACGZDAAGPnlOh0i4518.jpg" alt="企业人物图片"/>
+                </a>
+                <div class="c1006-row22-itemRight ">
+                    <div class="c1006-row22-itemR_Con">
+                        <h2 class="c1006-row22-itemR_tit">
+                            <a href="#" target="_blank">陇南宕昌县黄芪等中药材种植面积已达40万亩</a>
+                        </h2>
+                        <dl>
+                            <dt class="c1006-row22-itemR_Txt">本期专家：<span class="name">蔡妍</span></dt>
+                            <dd class="c1006-row22-itemR_passage"> 8月11日，宕昌县阿坞乡一户药农正在自家地里采收黄芪籽。据了解，宕昌县目前中药材种植面积已达40万亩，去年全县药材总产量约7.8万吨，总产值达5.3亿元以上，农民从药材中人均收入可达1833元。...
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+            </li>
+            <!--list-->
+        </ul>
+    </div>
+</div>
+<div class="c1006-row22-Wrap">
+    <!-- head -->
+    <div class="c1006-row22-Head">
+        <h2>企业人物</h2>
+        <div class="info">
+            在这里高手云集、人才辈出；分享的都是纯粹的工作分享、经验分享；
+        </div>
+        <div class="more">
+            <a href=""  title="更多" target="_blank">更多</a>
+        </div>
+
+    </div>
+    <!-- body -->
+    <div class="c1006-row22-Body   ">
+        <ul class=" clearfix testSlide2">
+            <!--list1  默认第一个数据展开  width:470px;-->
+            <li class="c1006-row22-item  clearfix " style="width: 470px;" >
+                <a class="c1006-row22-itemLeft " href="#" target="_blank" title="">
+                    <img src="http://img4.99114.com/group1/M00/49/97/wKgGTFYwRLWACGZDAAGPnlOh0i4518.jpg" alt="企业人物图片"/>
+                </a>
+                <div class="c1006-row22-itemRight ">
+                    <div class="c1006-row22-itemR_Con">
+                        <h2 class="c1006-row22-itemR_tit">
+                            <a href="#" target="_blank">陇南宕昌县黄芪等中药材种植面积已达40万亩</a>
+                        </h2>
+                        <dl>
+                            <dt class="c1006-row22-itemR_Txt">本期专家：<span class="name">蔡妍</span></dt>
+                            <dd class="c1006-row22-itemR_passage"> 8月11日，宕昌县阿坞乡一户药农正在自家地里采收黄芪籽。据了解，宕昌县目前中药材种植面积已达40万亩，去年全县药材总产量约7.8万吨，总产值达5.3亿元以上，农民从药材中人均收入可达1833元。...
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+            </li>
+            <!--list1-->
+            <li class="c1006-row22-item  clearfix " >
+                <a class="c1006-row22-itemLeft " href="#" target="_blank" title="">
+                    <img src="http://img4.99114.com/group1/M00/49/97/wKgGTFYwRLWACGZDAAGPnlOh0i4518.jpg" alt="企业人物图片"/>
+                </a>
+                <div class="c1006-row22-itemRight ">
+                    <div class="c1006-row22-itemR_Con">
+                        <h2 class="c1006-row22-itemR_tit">
+                            <a href="#" target="_blank">陇南宕昌县黄芪等中药材种植面积已达40万亩</a>
+                        </h2>
+                        <dl>
+                            <dt class="c1006-row22-itemR_Txt">本期专家：<span class="name">蔡妍</span></dt>
+                            <dd class="c1006-row22-itemR_passage"> 8月11日，宕昌县阿坞乡一户药农正在自家地里采收黄芪籽。据了解，宕昌县目前中药材种植面积已达40万亩，去年全县药材总产量约7.8万吨，总产值达5.3亿元以上，农民从药材中人均收入可达1833元。...
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+            </li>
+            <!--list1-->
+            <li class="c1006-row22-item  clearfix " >
+                <a class="c1006-row22-itemLeft " href="#" target="_blank" title="">
+                    <img src="http://img4.99114.com/group1/M00/49/97/wKgGTFYwRLWACGZDAAGPnlOh0i4518.jpg" alt="企业人物图片"/>
+                </a>
+                <div class="c1006-row22-itemRight ">
+                    <div class="c1006-row22-itemR_Con">
+                        <h2 class="c1006-row22-itemR_tit">
+                            <a href="#" target="_blank">陇南宕昌县黄芪等中药材种植面积已达40万亩</a>
+                        </h2>
+                        <dl>
+                            <dt class="c1006-row22-itemR_Txt">本期专家：<span class="name">蔡妍</span></dt>
+                            <dd class="c1006-row22-itemR_passage"> 8月11日，宕昌县阿坞乡一户药农正在自家地里采收黄芪籽。据了解，宕昌县目前中药材种植面积已达40万亩，去年全县药材总产量约7.8万吨，总产值达5.3亿元以上，农民从药材中人均收入可达1833元。...
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+            </li>
+
+        </ul>
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="../js/jquery-1.8.0.min.js"></script>
+
+<script type="text/javascript" src="../js/commonEffect.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $(".jQ_slideMenu").slideMenu({
+            autoPlay:true
+        });
+        $("#testSlide").slideMenu({
+            spreadWidth:"500px",
+            normalWidth:"100px",
+            intervalTime:3000,
+            autoPlay:false
+        });
+        $(".testSlide").slideMenu({
+            spreadWidth:"470px",
+            normalWidth:"210px",
+            intervalTime:3000,
+            autoPlay:false
+        });
+        $(".testSlide2").slideMenu({
+            spreadWidth:"470px",
+            normalWidth:"210px",
+            intervalTime:3000,
+            autoPlay:true
+        });
+
+        /*
+        对外暴漏四个参数
+         spreadWidth:"575px",
+         normalWidth:"205px",
+         intervalTime:3000,
+         autoPlay:true
+         * */
+    });
+</script>
+</html>

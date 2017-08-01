@@ -1,0 +1,146 @@
+@charset "UTF-8";
+/* 说明：这个页面中的样式是抽取最小公共组件的样式  */
+a:hover{ color: #f60;}/*  */
+/* 控制当前项目显示还是隐藏  .on  .cur  下的元素显示
+使用场景：
+    例如：导航
+   当前选中的项目为  .on  .cur
+   （1）其余元素隐藏  on 下面的元素显示，每一个条目 写上p_hide
+   .on>p_hide{ display:block}
+   （2）其余元素显示 on  下面的元素隐藏 ，为每一个条目写上p_show
+   .on>p_show{ display:none; }
+*/
+.p_show{ display: block;/* 这里不要加important */}
+.p_hide{ display: none;}
+.on .p_hide,.cur .p_hide{ display:block;}
+.on .p_show,.cur .p_show{ display:none;}
+/*-- 常用的按钮 --*/
+.p_btn{ border: none; display: inline-block;  height: 34px; line-height: 34px;font-weight: normal;font-size: 14px; cursor: pointer; text-align: center; user-select: none;}
+.p_btn_Orange{ background: #f60; color: #fff;}
+.p_btn_Orange:hover{ color: #fff;}
+.p_btn_xs{ height: 22px; line-height: 22px;}
+.p_btn_sm{ height: 30px; line-height: 30px;}
+.p_btn_lg{ height: 40px; line-height: 40px;}
+.p_btn_xl{ height: 45px; line-height: 45px;}
+.p_btn_block{ width: 100%; display: block; }
+.p_btn_HoverOrange{ border: 1px solid #ff7300; color: #ff7300; background-color: #fff;
+    transition: all 0.2s ease-in-out; -webkit-transition: all 0.2s ease-in-out;  -moz-transition: all 0.2s ease-in-out; -o-transition: all 0.2s ease-in-out;}
+.p_btn_HoverOrange:hover{ background-color: #ff7300 !important; color: #fff!important;}
+/*--- 常用的彩色标签 label 不同背景色的标签 label标签的文字 统一为白色 -----*/
+.p_label_bg1,.p_label_bg2,.p_label_bg3,.p_label_bg4,.p_label_bg5,.p_label_bg6,.p_label_bg7,.p_label_bg8,.p_label_bg9,.p_label_bg10,.p_label_bg11,.p_label_bg12,.p_label_bg13,.p_label_bg14,.p_label_bg15{ color: #fff;}
+/*橙 红 黄系*/
+.p_label_bg1{ background-color: #ff9cc4;}   /*桃红色；艳粉色；亮粉*/
+.p_label_bg15{background-color: #fe9b00;}   /*橙黄色*/
+.p_label_bg2{ background-color: #ff856a;}   /*橙红色*/
+.p_label_bg14{background-color: #f38224;}
+.p_label_bg12{ background-color:#fd8828;}   /*由浅变深*/
+.p_label_bg10{ background-color:#fd7505;}   /* 深橙色 */
+.p_label_bg13{ background-color:#e06700;}
+.p_label_bg7{ background-color: #dc3720;}   /*深红色*/
+.p_label_bg5{ background-color: #c3c334;}   /*橄榄色*/
+
+/*蓝 绿 紫色系*/
+.p_label_bg4{ background-color: #79d3f6;}   /* 深天蓝*/
+.p_label_bg8{ background-color: #00a9e7;}   /*深天蓝--*/
+.p_label_bg9{ background-color: #2bcbc2;}   /* 海绿色*/
+.p_label_bg3{ background-color: #9ca2ff;}   /*石板色 是蓝色*/
+.p_label_bg11{background-color: #8589b7;}   /* 灰紫色*/
+/*灰色*/
+.p_label_bg6{ background-color: #adb8be;}   /*深灰色 */
+
+.p_label_hovBg1:hover{background-color:#cc7d9d}
+.p_label_hovBg2:hover{background-color:#cc6a55}
+.p_label_hovBg3:hover{background-color:#7d82cc}
+.p_label_hovBg4:hover{background-color:#61a9c5}
+.p_label_hovBg5:hover{background-color:#9c9c2a}
+.p_label_hovBg6:hover{background-color:#8a9398}
+/*-- 常用的css3效果 --*/
+.p_css_ImgScale{ display: block; overflow: hidden;}
+.p_css_ImgScale img{ width: 100%; height: 100%; vertical-align: top; transition:all 1s ; -webkit-transition:all 0.5s ;  -moz-transition: all 1s ; -o-transition: all 1s ;  -ms-transition: all 1s ;  }
+.p_css_ImgScale:hover img{ transform:scale(1.1);-moz-transform:scale(1.1);-webkit-transform:scale(1.1);-o-transform:scale(1.1);-ms-transform:scale(1.1);}
+.p_css_ImgBorder:hover img{ border-color: #fdad6a!important;box-shadow:0 0 2px #fdad6a;-moz-box-shadow:0 0 2px #fdad6a;-o-box-shadow:0 0 2px #fdad6a;-webkit-box-shadow:0 0 2px #fdad6a;}
+.p_css_transX,.p_css_transXY .p_css_transXYChild{transition:all 0.2s ease-in-out;-webkit-transition:all 0.2s ease-in-out;-moz-transition:all 0.2s ease-in-out;-o-transition:all 0.2s ease-in-out;-ms-transition:all 0.2s ease-in-out;}
+.p_css_transX:hover{transform: translateX(5px);-webkit-transform: translateX(5px);-moz-transform: translateX(5px);-o-transform: translateX(5px);-ms-transform: translateX(5px);}
+.p_css_hoverOrange:hover{ color: #ff7300!important;}
+.p_css_hoverUnLine:hover{ text-decoration: underline;}
+.p_css_hoverOrangeBg:hover{ background-color: #ff7300!important;}
+.p_css_transXY:hover .p_css_transXYChild{ transform:translate(40px,15px);-moz-transform:translate(40px,15px);-webkit-transform:translate(40px,15px);-ms-transform:translate(40px,15px);}
+.p_css_shadowB{    box-shadow: 0px 1px 1px 1px rgba(0,0,0,0.1);
+    -webkit-box-shadow: 0px 1px 1px 1px rgba(0,0,0,0.1);
+    -moz-box-shadow: 0px 1px 1px 1px rgba(0,0,0,0.1);
+    -ms-box-shadow: 0px 1px 1px 1px rgba(0,0,0,0.1);/* 光照在上，阴影向下 */
+    border: 1px solid #fafafa;/* IE下形状怪异*/
+}
+/*-- 通用的标题 --*/
+.p_common_title-Wrap{height: 55px;  line-height: 55px; }
+.p_common_title-Con{ color: #252525;  }
+.p_common_title-TitTxt{ float: left; font-size: 20px; }
+.p_common_title-TitSub{ float: left; font-size: 14px; }
+.p_common_title-More{ float: right; font-size: 14px; /*color: #35b804;*//*2016-11-04注释*/}
+.p_common_title-MoreArow{ letter-spacing: -8px; padding-right: 5px;}
+/*-- 单个图片展示 --*/
+.p_imgOne-Img{ width: 100%; height: 100%; border: none; vertical-align: top;}
+
+/*-- banner轮播的样式  通用的banner轮播   //抽取 banner轮播 默认是390px高度的轮播, 圆点轮播，后期针对不同的轮播切换点：例如：圆点轮播 方形轮播 是数字轮播  默认是 空心带边框的圆点轮播（也就是环形）--*/
+.p_imgMul-Wrap{ position: relative; }
+.p_imgMul-slideCon{ height: 390px;}
+.p_imgMul-slideCon li{ display: none;  position: absolute; left: 0; top: 0; width: 100%; height: 100%;}
+.p_imgMul-slideCon li.cur{ display: block;}
+.p_imgMul-slideCon li a{ display: block;height: 100%; width: 100%;}
+.p_imgMul-slideCon li img{  height: 100%; width: 100%;}
+.p_imgMul-slideTab{ position: absolute; right: 50%; bottom: 15px; margin-right: -50px;}
+.p_imgMul-slideTab span{ float: left; width:8px; height:8px; margin-right:10px; border:3px solid #fff;  border-radius:8px; background:none; text-indent: 100px; overflow: hidden; cursor: pointer;}
+.p_imgMul-slideTab span.cur{  border:3px solid #91cd1e; background:#91cd1e; }
+/*banner轮播 焦点 为矩形的轮播 */
+.p_imgMul_rec-slideTab span{ width: 22px; height: 6px; border: none; background: #696969; border-radius: 0;}
+.p_imgMul_rec-slideTab span.cur{ border: none;}
+/*banner轮播 焦点为 数字的轮播*/
+.p_imgMul_num-slideTab span{  }
+.p_imgMul_num-slideTab span.cur{ }
+/*banner轮播 焦点为 跑道形状的轮播*/
+.p_imgMul_track-slideTab span{ width: 25px; height: 10px; border: none; background: #d9d9d9; border-radius: 5px; -webkit-border-radius: 5px; }
+.p_imgMul_track-slideTab span.cur{ border: none; background:#ff7300;  }
+/*banner轮播 焦点为 实心圆形的轮播*/
+.p_imgMul_cir-slideTab span{float: left; width:12px; height:12px; margin-right:10px; border-radius:8px; background:#ccc; text-indent: 100px; overflow: hidden;  border: none;}
+.p_imgMul_cir-slideTab span.cur{background:#91cd1e; border: none; }
+/*-- 左文 右图  --*/
+.p_imgTxt_LTxt-Wrap{ position: relative;}
+.p_imgTxt_LTxt-FlexW{ padding-left: 15px; padding-right: 110px; word-break: break-all; }/* 自适应的宽度 */
+.p_imgTxt_LTxt-FixedW{ position: absolute; width: 100px; height: 100px; right: 8px; top: 10px;}    /* 固定的宽度 */
+/*-- 左图 右文  --*/
+.p_imgTxt_RTxt-Wrap{ position: relative;}
+.p_imgTxt_RTxt-FlexW{  padding-left: 100px;padding-right: 15px; word-break: break-all;}/* 自适应的宽度 */
+.p_imgTxt_RTxt-FixedW{ position: absolute; width: 80px; height: 80px; left: 3px; top: 0px;}    /* 固定的宽度 */
+/*-- 纯文字列表--》单行文字 --*/
+
+/*-- 纯文字列表--》两行文字  前面有序号  没有序号  右侧有链接  右侧没有连接  或者仅仅有一行文字 都适用 --*/
+.p_listTxtTwo-Wrap{ padding: 3px 18px 3px; }
+.p_listTxtTwo-Li{ padding: 10px 0;*zoom: 1;/* IE7出现间隙的bug */}
+.p_listTxtTwo-LiCon{  position: relative; }/*li的主要内容  序号放在Con里面*/
+.p_listTxtTwo-LiNum{ position: absolute; left: 0; top: 0; width:15px; height:15px; line-height:15px;font-size:10px; text-align:center; color:#fff;}  /*序号*/
+.p_listTxtTwo-LiTitle{ position: relative; color: #333; font-size: 14px; line-height: 24px;  height: 24px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; } /*第一行的标题*/
+.p_listTxtTwo-LiTitleRight{ position: absolute; right: 0; top: 0; } /*第一行右侧的链接*/
+.p_listTxtTwo-LiSub{ position: relative; color: #999; font-size: 14px; line-height: 22px; height: 22px;  white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }/*第二行*/
+.p_listTxtTwo-LiSubRight{ position: absolute; right: 0; top: 0; }/*第二行右侧的链接*/
+/* table--》默认的table  标题是灰色背景 单行文字 向上滚动 */
+.p_table_default-Wrap{ width: 100%; table-layout: fixed; }
+.p_table_default-Wrap th,.p_table_default-Wrap td{text-align:center; color:#333; font-size:14px; }
+.p_table_default-Wrap th{ height:34px; line-height:34px; padding: 0 5px; background:#f6f6f6;}
+.p_table_default-Wrap td{ height:24px; line-height:24px; padding: 8px 5px; white-space: nowrap; overflow: hidden;text-overflow: ellipsis;}
+/*table---》加边框的table  */
+.p_table_border th,.p_table_border td{border-collapse:collapse; border: 1px solid #efefef;}
+/*--特殊的btn --*/
+.p_other_btnRecom{display:block;width:172px; height:54px; line-height:54px; background:#f15b89 url("../../img/common/p_ImgBg_2_go.png") no-repeat 105px center; color:#fff;font-size:18px; text-indent:16px;transition:all 0.3s ease;-moz-transition:all 0.3s ease;-ms-transition:all 0.3s ease;-webkit-transition:all 0.3s ease; }
+.p_other_btnRecom:hover{ color:#fff; margin-left:15px; }
+
+/*-- 小图标 --*/
+.p_Icon_HotRecm_s1{ display:inline-block; width: 16px; height: 16px; background: url("../../img/common/p_Icon_1.png") no-repeat 0 -390px;  }/**/
+.p_Icon_serch_s1{ display:inline-block; width: 16px; height: 16px;background: url("../../img/common/p_Icon_1.png") no-repeat 0 -417px;  }/*搜索图标 */
+.p_Icon_enter_s1,.p_Icon_signIn_s1{ display: inline-block;  width: 13px; height: 45px;padding-right: 5px;  background: url("../../img/common/p_Icon_2.png") no-repeat 0 15px; }/*注册登录小图标*/
+.p_Icon_signIn_s1{ background-position: 0px -35px;}    /*注册登录小图标*/
+/*.p_Icon_title_s1{ display: block; background: url("../../img/common/p_ImgBg_3.png") no-repeat 0 0; min-height: 45px;}*/   /*大标题背景font-size40px*/  /* 2016-11-03去掉背景标题*/
+.p_Icon_firm_s1{ background:url("../../img/common/p_ImgBg_4.jpg") no-repeat center 13px;}/* 企业的大图背景 */
+.p_Icon_nav_s1{ background: url("../../img/common/p_ImgBg_6.png") no-repeat 0 0;}
+.p_Icon_nav_s2{ background: url("../../img/common/p_ImgBg_6.png") no-repeat 0 -50px;}
+.p_Icon_member_s1{ position: absolute ; left: 0;top: 3px; width: 15px; height: 15px; background: url("../../img/common/p_Icon_1.png") no-repeat 0 -360px;}/* 最新留言左边的人头像 */
+

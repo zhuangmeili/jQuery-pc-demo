@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index 首页</title>
+    <link rel="stylesheet" href="../css/common/common.css">
+    <link rel="stylesheet" href="1_slideGradual.css">
+    <style type="text/css">
+        /*  */
+        .c1008-row0-Wrap{ width:1190px; margin: 12px auto 0;}
+        .c1008-row0-Left{ height: 487px; width: 202px; background: #f8f8f8; float: left;}
+        .c1008-row0-Center{height: 487px;width:730px; margin-left: 12px; float: left; overflow: hidden;}
+        .c1008-row0-CBanner{ height: 345px; overflow: hidden; position: relative;}
+        .c1008-row0-CBanner_pics{ height: 2000px;}
+        .c1008-row0-CBanner_pics a{ display: block; width:100%; height: 345px;}
+        .c1008-row0-CBanner_pics a img{ width: 100%; height: 100%;}
+        .c1008-row0-CBanner_tabs{ position: absolute; left: 0; bottom: 15px; width: 100%; text-align: center;}
+        .c1008-row0-CBanner_tabs span{ display: inline-block; border-radius: 50%; width: 18px; height: 18px; margin-right: 5px; background: #fff; border: 1px  solid #4abe00; text-align: center;
+            line-height: 18px; font-size: 12px; cursor: pointer; color: #4abe00;}
+        .c1008-row0-CBanner_tabs span.on{ background: #4abe00; color: #fff;}
+        .c1008-row0-CSlide{ margin-top: 12px; overflow: hidden; height:130px ; position: relative;  }
+        .c1008-row0-CSlide_list{ width: 2000px;}
+        .c1008-row0-CSlide_list li{ float: left; margin-right:20px; width: 230px;}
+        .c1008-row0-CSlide_list .imgBox{ display: block; height:130px; }
+        .c1008-row0-CSlide_list .imgBox img{ width: 100%; height: 100%;}
+        .c1008-row0-CSlide_btnL,.c1008-row0-CSlide_btnR{ position: absolute; top: 34px; width: 28px; height: 62px;}
+        .c1008-row0-CSlide_btnL{ left: 0; background: url("../image/c1008/c1008-row0-btnL.png") no-repeat 0 0;}
+        .c1008-row0-CSlide_btnR{  right: 0; background: url("../image/c1008/c1008-row0-btnR.png") no-repeat 0 0;}
+
+        /* right  */
+        .c1008-row0-Right{ width:230px; height: 485px;  float: right; border: 1px solid #e9e9e9; overflow: hidden;}
+
+        .c1008-row0-RTop{width:238px;height:65px;overflow:hidden;border-bottom:1px solid #e9e9e9; background:#f9f9f9;}
+        .c1008-row0-RTop_time{ background:#4abe00; width:80px; height:40px;color:#fff; font-family:"Arial"; margin:12px;}
+        .c1008-row0-RTop_time h3{ width:40px; text-align:center; float:left; font-size:14px;}
+        .c1008-row0-RTop_time em{width:40px; text-align:center; line-height:15px; float:left; font-size:18px;}
+        .c1008-row0-RTop_time h4{ line-height:36px; font-size:30px; width:35px; float:right; background:#fff;color:#4abe00; margin:2px;}
+        .t2012-advertising-bottom em{ color:#4abe00; font-size:14px; font-weight:bold; font-family:Arial, Helvetica, sans-serif;}
+
+        .c1008-row0-RCenter{ padding:10px; width:218px; height: 46px; line-height: 23px;overflow: hidden; }
+        .c1008-row0-RCenter li em{ color:#4abe00; font-size:14px; font-weight:bold; font-family:Arial;}
+
+        .c1008-row0-RBtm_title{height:44px; line-height:44px;border-bottom:1px  dashed #dddddd;border-top:1px  dashed #dddddd; margin-top:-1px; background:#f9f9f9;}
+        .c1008-row0-RBtm_title h2{ font-size:14px;font-family:"微软雅黑";font-weight:normal; color:#666; padding-left:12px;  float:left;display:block;}
+        .c1008-row0-RBtm_list{ padding:8px; height:126px; overflow:hidden;}
+        .c1008-row0-RBtm_list li,.c1008-row0-RBtm_list2 li{ height:26px; line-height:26px; overflow:hidden; text-overflow: ellipsis; white-space: nowrap;}
+        .c1008-row0-RBtm_list2{padding:10px; height:104px; overflow:hidden; }
+
+
+        .c1006-row5-Wrap{ height: 400px;}
+        .c1006-row5-Wrap .c1006-row5-trade-list li{ height:24px; line-height: 24px; padding: 4px 5px;}
+    </style>
+</head>
+<body>
+<div class="c1008-row0-Wrap clearfix" >
+    <!--1-1 left -->
+    <div class="c1008-row0-Left">
+    </div>
+    <!-- 1-2center -->
+    <div class="c1008-row0-Center">
+        <!-- banner -->
+        <div class="c1008-row0-CBanner">
+            <ul class="c1008-row0-CBanner_pics ">
+                <li><a href="#"><img src="../fodder/c1008/row0-banner2.jpg" alt="banner轮播图"/></a></li>
+                <li><a href="#"><img src="../fodder/c1008/row0-banner1.jpg" alt="banner轮播图"/></a></li>
+                <li><a href="#"><img src="../fodder/c1008/row0-banner3.jpg" alt="banner轮播图"/></a></li>
+            </ul>
+            <div class="c1008-row0-CBanner_tabs  clearfix  ">
+                <span class="on ">1</span>
+                <span>2</span>
+                <span>3</span>
+            </div>
+        </div>
+        <!-- moveLeft -->
+        <div class=" c1008-row0-CSlide">
+            <ul class="clearfix c1008-row0-CSlide_list">
+                <li>
+                    <a class="imgBox" href="#" target="_blank">
+                        <img src="../fodder/c1008/row0-banner2.jpg" alt="slide left">
+                    </a>
+                </li>
+                <li>
+                    <a class="imgBox" href="#" target="_blank">
+                        <img src="../fodder/c1008/row0-banner3.jpg" alt="slide left">
+                    </a>
+                </li>
+                <li>
+                    <a class="imgBox" href="#" target="_blank">
+                        <img src="../fodder/c1008/row0-banner4.jpg" alt="slide left">
+                    </a>
+                </li>
+                <li>
+                    <a class="imgBox" href="#" target="_blank">
+                        <img src="../fodder/c1008/row0-banner1.jpg" alt="slide left">
+                    </a>
+                </li>
+
+            </ul>
+            <!-- btnLeft -->
+            <a href="javascript:;" class="c1008-row0-CSlide_btnL" ></a>
+            <!--  btn Right-->
+            <a href="javascript:;" class="c1008-row0-CSlide_btnR"></a>
+        </div>
+
+
+    </div>
+    <!--1-3 right -->
+    <div class="c1008-row0-Right ">
+        <!-- right time -->
+        <div class="c1008-row0-RTop clearfix">
+            <div class="c1008-row0-RTop_time floatL">
+                <div class="floatL">
+                    <h3>2016</h3>
+                    <br>
+                    <em>12</em>
+                </div>
+                <h4>21</h4>
+            </div>
+
+        </div>
+        <div class="c1008-row0-RCenter ">
+            <ul>
+                <li>昨日新增产品<em>40 </em>件</li>
+                <li>总产品数<em> 40 </em>件</li>
+            </ul>
+        </div>
+        <div class="c1008-row0-RBtm_title">
+            <h2><a href="#" title="最新采购信息" target="_self">最新采购信息</a></h2>
+        </div>
+        <div class="c1008-row0-RBtm_list">
+            <ul >
+                <li><span>【求购】</span>
+                    <a target="_blank" href="">11   采购 有机小麦有机小麦白面粉有机小麦白面粉白面粉 </a>
+                </li>
+                <li><span>【求购】</span>
+                    <a target="_blank" href=""> 22 采购 有机小麦有机小麦白面粉有机小麦白面粉白面粉 </a>
+                </li>
+                <li><span>【求购】</span>
+                    <a target="_blank" href=""> 33 采购 有机小麦有机小麦白面粉有机小麦白面粉白面粉 </a>
+                </li>
+                <li><span>【求购】</span>
+                    <a target="_blank" href=""> 44 采购 有机小麦有机小麦白面粉有机小麦白面粉白面粉 </a>
+                </li>
+                <li><span>【求购】</span>
+                    <a target="_blank" href="">55  采购 有机小麦有机小麦白面粉有机小麦白面粉白面粉 </a>
+                </li>
+                <li><span>【求购】</span>
+                    <a target="_blank" href=""> 66 采购 有机小麦有机小麦白面粉有机小麦白面粉白面粉 </a>
+                </li>
+                <li><span>【求购】</span>
+                    <a target="_blank" href="">77  采购 有机小麦有机小麦白面粉有机小麦白面粉白面粉 </a>
+                </li>
+                <li><span>【求购】</span>
+                    <a target="_blank" href=""> 88 采购 有机小麦有机小麦白面粉有机小麦白面粉白面粉 </a>
+                </li>
+
+
+            </ul>
+        </div>
+        <div class="c1008-row0-RBtm_title">
+            <h2><a href="#" title="最新采购信息" target="_self">最新广告</a></h2>
+        </div>
+        <div class="c1008-row0-RBtm_list2">
+            <ul class="clearfix">
+                <li><a href="" target="_blank" title="新疆奇台县重视有机小麦的发展"> 新疆奇台县重新疆奇台县重视有新疆奇台县重视有视有</a></li>
+                <li><a href="" target="_blank" title="新疆奇台县重视有机小麦的发展"> 新疆奇台县重视有 </a></li>
+                <li><a href="" target="_blank" title="新疆奇台县重视有机小麦的发展"> 新疆奇台县重视有 </a></li>
+                <li><a href="" target="_blank" title="新疆奇台县重视有机小麦的发展"> 新疆奇台县重视有机 </a></li>
+                <li><a href="" target="_blank" title="新疆奇台县重视有机小麦的发展"> 新疆奇台县重视有机 </a></li>
+                <li><a href="" target="_blank" title="新疆奇台县重视有机小麦的发展"> 新疆奇台县重视有机 </a></li>
+                <li><a href="" target="_blank" title="新疆奇台县重视有机小麦的发展"> 新疆奇台县重视有机</a></li>
+                <li><a href="" target="_blank" title="新疆奇台县重视有机小麦的发展"> 新疆奇台县重视有 </a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="c1006-row5-Wrap clearfix">
+    <div class="c1006-row5-trade floatR">
+        <div class="c1006-row5-Head">
+            <h2>订单信息</h2>
+        </div>
+        <div class="c1006-row5-trade-box testMoveCon"><!-- jQ_slowMoveTop -->
+            <!-- jQ_slowMoveTopCon -->
+            <ul class="c1006-row5-trade-list  clearfix testMoveUl">
+                <li>
+                    <div>
+                        <p class="floatL">11订单号 123658</p>
+                        <span class="floatR">已经到货</span>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <p class="floatL">22  订单号 1251574</p>
+                        <span class="floatR">已经到货</span>
+                    </div>
+
+                <li>
+                    <div>
+                        <p class="floatL"> 33 订单号 259955</p>
+                        <span class="floatR">已经到货</span>
+                    </div>
+
+                <li>
+                    <div>
+                        <p class="floatL">4 4   订单号 60251475</p>
+                        <span class="floatR">已经到货</span>
+                    </div>
+
+                <li>
+                    <div>
+                        <p class="floatL">55 订单号 1303254587</p>
+                        <span class="floatR">已经到货</span>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <p class="floatL">66 订单号 130254587</p>
+                        <span class="floatR">已经到货</span>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <p class="floatL">77 订单号 130254587</p>
+                        <span class="floatR">已经到货</span>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <p class="floatL">88 订单号 130254587</p>
+                        <span class="floatR">已经到货</span>
+                    </div>
+                </li>
+
+
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="c1006-row6-Wrap clearfix">
+    <!-- left -->
+    <div class="c1006-row6-left floatL">
+        <div class="c1006-row6-Head">
+            <h2 >最新求购</h2>
+            <div class="more" >
+                <a href="#" title="更多" target="">更多</a>
+            </div>
+        </div>
+        <div class="c1006-row6-left-con">
+            <table cellpadding="0" cellspacing="0">
+                <thead>
+                <tr>
+                    <th width="25%">标题</th>
+                    <th width="10%">区域要求</th>
+                    <th width="15%">发布时间</th>
+                    <th width="15%">截止时间</th>
+                    <th width="10%">联系人</th>
+                    <th width="15%">联系电话</th>
+                    <th width="10%">操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td colspan="8">
+                        <div class="c1006-row6-scrollList testMoveCon3"><!-- jQ_slowMoveTop -->
+                            <table cellpadding="0" cellspacing="0" class="testMoveTable" ><!-- jQ_slowMoveTopCon  -->
+                                <tbody>
+                                <tr>
+                                    <td width="25%"><a target="_blank" href="#" title="求购中药材饮片包装内膜袋"> 11求购中11求购中药材饮片包装药材饮片包装... </a></td>
+                                    <td width="10%"> 无限制 </td>
+                                    <td width="15%" class="gray"> 2016-12-16 </td>
+                                    <td width="15%" class="gray">2016-10-14</td>
+                                    <td width="10%">王经理</td>
+                                    <td width="15%">189****6189</td>
+                                    <td width="10%"><a class="c1006-row6-pay" target="_blank" href="#" title="求购中药材饮片包装内膜袋">立即报价</a></td>
+                                </tr>
+                                <tr>
+                                    <td width="25%"><a target="_blank" href="#" title="求购中药材饮片包装内膜袋"> 22求购中药材饮片包装药材饮片包装... </a></td>
+                                    <td width="10%"> 无限制 </td>
+                                    <td width="15%" class="gray"> 2016-12-16 </td>
+                                    <td width="15%" class="gray">2016-10-14</td>
+                                    <td width="10%">王经理</td>
+                                    <td width="15%">189****6189</td>
+                                    <td width="10%"><a class="c1006-row6-pay" target="_blank" href="#" title="求购中药材饮片包装内膜袋">立即报价</a></td>
+                                </tr>
+                                <tr>
+                                    <td width="25%"><a target="_blank" href="#" title="求购中药材饮片包装内膜袋"> 33求购中11求购中药材饮片包装药材饮片包装... </a></td>
+                                    <td width="10%"> 无限制 </td>
+                                    <td width="15%" class="gray"> 2016-12-16 </td>
+                                    <td width="15%" class="gray">2016-10-14</td>
+                                    <td width="10%">王经理</td>
+                                    <td width="15%">189****6189</td>
+                                    <td width="10%"><a class="c1006-row6-pay" target="_blank" href="#" title="求购中药材饮片包装内膜袋">立即报价</a></td>
+                                </tr>
+                                <tr>
+                                    <td width="25%"><a target="_blank" href="#" title="求购中药材饮片包装内膜袋"> 44求购中11求购中药材饮片包装药材饮片包装... </a></td>
+                                    <td width="10%"> 无限制 </td>
+                                    <td width="15%" class="gray"> 2016-12-16 </td>
+                                    <td width="15%" class="gray">2016-10-14</td>
+                                    <td width="10%">王经理</td>
+                                    <td width="15%">189****6189</td>
+                                    <td width="10%"><a class="c1006-row6-pay" target="_blank" href="#" title="求购中药材饮片包装内膜袋">立即报价</a></td>
+                                </tr>
+                                <tr>
+                                    <td width="25%"><a target="_blank" href="#" title="求购中药材饮片包装内膜袋"> 55求购中11求购中药材饮片包装药材饮片包装... </a></td>
+                                    <td width="10%"> 无限制 </td>
+                                    <td width="15%" class="gray"> 2016-12-16 </td>
+                                    <td width="15%" class="gray">2016-10-14</td>
+                                    <td width="10%">王经理</td>
+                                    <td width="15%">189****6189</td>
+                                    <td width="10%"><a class="c1006-row6-pay" target="_blank" href="#" title="求购中药材饮片包装内膜袋">立即报价</a></td>
+                                </tr>
+                                <tr>
+                                    <td width="25%"><a target="_blank" href="#" title="求购中药材饮片包装内膜袋">66求购中11求购中药材饮片包装药材饮片包装... </a></td>
+                                    <td width="10%"> 无限制 </td>
+                                    <td width="15%" class="gray"> 2016-12-16 </td>
+                                    <td width="15%" class="gray">2016-10-14</td>
+                                    <td width="10%">王经理</td>
+                                    <td width="15%">189****6189</td>
+                                    <td width="10%"><a class="c1006-row6-pay" target="_blank" href="#" title="求购中药材饮片包装内膜袋">立即报价</a></td>
+                                </tr>
+                                <tr>
+                                    <td width="25%"><a target="_blank" href="#" title="求购中药材饮片包装内膜袋">77求购中11求购中药材饮片包装药材饮片包装... </a></td>
+                                    <td width="10%"> 无限制 </td>
+                                    <td width="15%" class="gray"> 2016-12-16 </td>
+                                    <td width="15%" class="gray">2016-10-14</td>
+                                    <td width="10%">王经理</td>
+                                    <td width="15%">189****6189</td>
+                                    <td width="10%"><a class="c1006-row6-pay" target="_blank" href="#" title="求购中药材饮片包装内膜袋">立即报价</a></td>
+                                </tr>
+                                <tr>
+                                    <td width="25%"><a target="_blank" href="#" title="求购中药材饮片包装内膜袋">88求购中11求购中药材饮片包装药材饮片包装... </a></td>
+                                    <td width="10%"> 无限制 </td>
+                                    <td width="15%" class="gray"> 2016-12-16 </td>
+                                    <td width="15%" class="gray">2016-10-14</td>
+                                    <td width="10%">王经理</td>
+                                    <td width="15%">189****6189</td>
+                                    <td width="10%"><a class="c1006-row6-pay" target="_blank" href="#" title="求购中药材饮片包装内膜袋">立即报价</a></td>
+                                </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- right -->
+    <div class="c1006-row5-trade floatR">
+        <div class="c1006-row5-Head">
+            <h2>交易信息</h2>
+        </div>
+        <div class="c1006-row5-trade-box testMoveCon2"><!-- jQ_slowMoveTop -->
+            <!-- jQ_slowMoveTopCon -->
+            <ul class="c1006-row5-trade-list testMoveUl clearfix">
+                <li>
+                    <div>
+                        <p class="floatL">11  订 13031560223658</p>
+                        <span class="floatR">已经到货</span>
+                    </div>
+                    <p><span class="floatL">金额<strong>3210.0</strong>元</span> <span class="floatR">批发商-佳乐</span></p>
+                </li>
+                <li>
+                    <div>
+                        <p class="floatL">22   订 13031560251574</p>
+                        <span class="floatR">已经到货</span>
+                    </div>
+                    <p><span class="floatL">金额<strong>8520</strong>元</span> <span class="floatR">批发商-新生活</span></p></li>
+                <li>
+                    <div>
+                        <p class="floatL"> 33   13031560259955</p>
+                        <span class="floatR">已经到货</span>
+                    </div>
+                    <p><span class="floatL">金额<strong>1450</strong>元</span> <span class="floatR">批发商-绿时代</span></p></li>
+                <li>
+                    <div>
+                        <p class="floatL"> 44  订 13031560251475</p>
+                        <span class="floatR">已经到货</span>
+                    </div>
+                    <p><span class="floatL">金额<strong>7750</strong>元</span> <span class="floatR">批发商-好乐</span></p></li>
+                <li>
+                    <div>
+                        <p class="floatL"> 55  13031560254587</p>
+                        <span class="floatR">已经到货</span>
+                    </div>
+                    <p><span class="floatL">金额<strong>3350</strong>元</span> <span class="floatR">批发商-富元</span></p></li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+
+<div class="c1006-row7-Wrap clearfix">
+    <!-- left -->
+    <div class="c1006-row7-left floatL">
+        <div class="c1006-row7-Head">
+            <h2 >黄芪供应</h2>
+            <div class="more" >
+                <a href="#" title="更多" target="">更多</a>
+            </div>
+        </div>
+        <div class="c1006-row7-left-con">
+            <table cellpadding="0" cellspacing="0">
+                <thead>
+                <tr>
+                    <th width="15%">发布日期</th>
+                    <th width="30%">产品名称</th>
+                    <th width="15%">市场价</th>
+                    <th width="10%">单位</th>
+                    <th width="15%">库存量</th>
+                    <th width="15%">操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td colspan="8">
+                        <div class="c1006-row7-scrollList "><!-- jQ_slowMoveTop -->
+                            <table cellpadding="0" cellspacing="0" class="" ><!-- jQ_slowMoveTopCon -->
+                                <tbody>
+                                <tr>
+                                    <td width="15%" class="gray">2016-07-07</td>
+                                    <td width="30%" class="orange"> 11大量供应果蔬脆片 大量供应果蔬脆片大量供应果蔬脆片紫薯脆片 ... </td>
+                                    <td width="15%" class="red"><span class="fArial colorRed">15.00</span></td>
+                                    <td width="10%" class="green"><span>瓶</span> </td>
+                                    <td width="15%">1000</td>
+                                    <td width="15%"><a href="#" target="_blank" class="orange">立即询价</a></td>
+                                </tr>
+                                <tr>
+                                    <td width="15%" class="gray">2016-07-07</td>
+                                    <td width="30%" class="orange"> 22大量供应果蔬脆片 大量供应果蔬脆片大量供应果蔬脆片紫薯脆片 ... </td>
+                                    <td width="15%" class="red"><span class="fArial colorRed">15.00</span></td>
+                                    <td width="10%" class="green"><span>瓶</span> </td>
+                                    <td width="15%">1000</td>
+                                    <td width="15%"><a href="#" target="_blank" class="orange">立即询价</a></td>
+                                </tr>
+                                <tr>
+                                    <td width="15%" class="gray">2016-07-07</td>
+                                    <td width="30%" class="orange"> 33大量供应果蔬脆片 大量供应果蔬脆片大量供应果蔬脆片紫薯脆片 ... </td>
+                                    <td width="15%" class="red"><span class="fArial colorRed">15.00</span></td>
+                                    <td width="10%" class="green"><span>瓶</span> </td>
+                                    <td width="15%">1000</td>
+                                    <td width="15%"><a href="#" target="_blank" class="orange">立即询价</a></td>
+                                </tr>
+                                <tr>
+                                    <td width="15%" class="gray">2016-07-07</td>
+                                    <td width="30%" class="orange">44 大量供应果蔬脆片 大量供应果蔬脆片大量供应果蔬脆片紫薯脆片 ... </td>
+                                    <td width="15%" class="red"><span class="fArial colorRed">15.00</span></td>
+                                    <td width="10%" class="green"><span>瓶</span> </td>
+                                    <td width="15%">1000</td>
+                                    <td width="15%"><a href="#" target="_blank" class="orange">立即询价</a></td>
+                                </tr>
+                                <tr>
+                                    <td width="15%" class="gray">2016-07-07</td>
+                                    <td width="30%" class="orange"> 55大量供应果蔬脆片 大量供应果蔬脆片大量供应果蔬脆片紫薯脆片 ... </td>
+                                    <td width="15%" class="red"><span class="fArial colorRed">15.00</span></td>
+                                    <td width="10%" class="green"><span>瓶</span> </td>
+                                    <td width="15%">1000</td>
+                                    <td width="15%"><a href="#" target="_blank" class="orange">立即询价</a></td>
+                                </tr>
+                                <tr>
+                                    <td width="15%" class="gray">2016-07-07</td>
+                                    <td width="30%" class="orange"> 66大量供应果蔬脆片 大量供应果蔬脆片大量供应果蔬脆片紫薯脆片 ... </td>
+                                    <td width="15%" class="red"><span class="fArial colorRed">15.00</span></td>
+                                    <td width="10%" class="green"><span>瓶</span> </td>
+                                    <td width="15%">1000</td>
+                                    <td width="15%"><a href="#" target="_blank" class="orange">立即询价</a></td>
+                                </tr>
+                                <tr>
+                                    <td width="15%" class="gray">2016-07-07</td>
+                                    <td width="30%" class="orange"> 77大量供应果蔬脆片 大量供应果蔬脆片大量供应果蔬脆片紫薯脆片 ... </td>
+                                    <td width="15%" class="red"><span class="fArial colorRed">15.00</span></td>
+                                    <td width="10%" class="green"><span>瓶</span> </td>
+                                    <td width="15%">1000</td>
+                                    <td width="15%"><a href="#" target="_blank" class="orange">立即询价</a></td>
+                                </tr>
+                                <tr>
+                                    <td width="15%" class="gray">2016-07-07</td>
+                                    <td width="30%" class="orange"> 88大量供应果蔬脆片 大量供应果蔬脆片大量供应果蔬脆片紫薯脆片 ... </td>
+                                    <td width="15%" class="red"><span class="fArial colorRed">15.00</span></td>
+                                    <td width="10%" class="green"><span>瓶</span> </td>
+                                    <td width="15%">1000</td>
+                                    <td width="15%"><a href="#" target="_blank" class="orange">立即询价</a></td>
+                                </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- right -->
+    <div class="c1006-row7-right floatR">
+        <div class="c1006-row7-Head">
+            <h2 >招商加盟</h2>
+            <div class="more" >
+                <a href="#" title="更多" target="_blank">更多</a>
+            </div>
+        </div>
+        <div class="c1006-row7-RMain">
+            <div class="c1006-row7-RMain-con">
+                <dl>
+                    <dt>
+                        <a title="" target="_blank" href="#"> <img src="../fodder/c1006/row7_join.jpg"></a>
+                    </dt>
+                    <dd>
+                        <p><a title="" target="_blank" href="#"> 招商厂家直销 散装果干批发 冻干芒果 芒果脆 芒果干 ... </a></p>
+                        <label>加盟金额：<span>30万以上</span></label>
+                        <span class="join"><a title="" target="_blank" href="#">我要加盟</a></span>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>
+                        <a title="" target="_blank" href="#"> <img src="../fodder/c1006/row7_join.jpg"></a>
+                    </dt>
+                    <dd>
+                        <p><a title="" target="_blank" href="#"> 招商厂家直销 散装果干批发 冻干芒果 芒果脆 芒果干 ... </a></p>
+                        <label>加盟金额：<span>30万以上</span></label>
+                        <span class="join"><a title="" target="_blank" href="#">我要加盟</a></span>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>
+                        <a title="" target="_blank" href="#"> <img src="../fodder/c1006/row7_join.jpg"></a>
+                    </dt>
+                    <dd>
+                        <p><a title="" target="_blank" href="#"> 招商厂家直销 散装果干批发 冻干芒果 芒果脆 芒果干 ... </a></p>
+                        <label>加盟金额：<span>30万以上</span></label>
+                        <span class="join"><a title="" target="_blank" href="#">我要加盟</a></span>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>
+                        <a title="" target="_blank" href="#"> <img src="../fodder/c1006/row7_join.jpg"></a>
+                    </dt>
+                    <dd>
+                        <p><a title="" target="_blank" href="#"> 招商厂家直销 散装果干批发 冻干芒果 芒果脆 芒果干 ... </a></p>
+                        <label>加盟金额：<span>30万以上</span></label>
+                        <span class="join"><a title="" target="_blank" href="#">我要加盟</a></span>
+                    </dd>
+                </dl>
+
+
+            </div>
+        </div>
+    </div>
+
+</div>
+</body>
+<script type="text/javascript" src="../js/jquery-1.8.0.min.js"></script>
+<!--<script type="text/javascript" src="../js/common/common.js"></script>-->
+
+<script type="text/javascript">
+;(function($){
+    $.fn.extend({
+        slideToTop:function (options) {
+            var $slides=$(this);
+            if($slides.length){
+                $slides.each(function (i) {
+                    var _this=$slides[i];
+                    var defaults={
+                        slideCon:"",        //必选参数
+                        tabCon:"",          //可选参数
+                        autoPlay:true,      //可选参数
+                        slideTime:1000,     //可选参数
+                        intervalTime:2500   //可选参数
+                    };
+                    //把option参数合并到defaults中，并把defaults赋值给  options
+                    options=$.extend(defaults,options);
+                    var $slideCon=$(_this).find(options.slideCon);
+                    var $tabCon=$(_this).find(options.tabCon);
+                    var timer=null;
+                    var stepH=0;
+                    var liLen=0;
+                    var count=0;
+                    var height=0;
+                    // 适用 结构 ul.jQ_slowMoveTopCon> li
+                    if($slideCon.children("li").length>=1){
+                        var stepH=$slideCon.find("li:first").outerHeight(true);
+                        var liLen=$slideCon.find("li").length;
+                        $slideCon.find("li").clone(true).appendTo($slideCon);//复制一份 添加到元素后面
+                        liLen=$slideCon.find("li").length;
+                        $slideCon.css("height",liLen*stepH+"px");
+                    }
+                    //适用结构 table.jQ_slowMoveTopCon tr
+                    if($slideCon.find("tr").length>=1){
+                        var stepH=$slideCon.find("tr:first").outerHeight(true);
+                        var liLen=$slideCon.find("tr").length;
+                        $slideCon.find("tr").clone(true).appendTo($slideCon);//复制一份 添加到元素后面
+                        liLen=$slideCon.find("tr").length;
+                        $slideCon.css("height",liLen*stepH+"px");
+                    }
+                    //运动函数
+                    function fnMove(){
+                        $slideCon.stop(true,false).animate({marginTop:-count*stepH+"px"},options.slideTime);
+                    }
+                    function changeTabFocus() {
+                        //如果有焦点的话
+                        if(options.tabCon  && $tabCon.length ){
+                            if(count==liLen/2){
+                                $tabCon.children("*:first").addClass("on").siblings().removeClass("on");
+                            }
+                            $tabCon.children("*").eq(count).addClass("on").siblings().removeClass("on");
+                        }
+                    }
+                    if(options.tabCon && $tabCon.length){
+                        $tabCon.children("*").click(function () {
+                            $(this).addClass("on").siblings().removeClass("on");
+                            $slideCon.stop(true,false).animate({marginTop:-$(this).index()*stepH+"px"},options.slideTime);
+                            count=$(this).index();
+                        });
+                    }
+                    //是否触发自动轮播
+                    if(options.autoPlay){
+                        //鼠标放上去停止定时器
+                        $(_this).hover(function(){
+                            clearInterval(timer);
+                        },function(){
+                            timer=setInterval(function(){
+                                count++;
+                                if(count>liLen/2){
+                                    count=1;
+                                    $slideCon.css({marginTop:0});  /*一瞬间拉回来*/
+                                }
+                                changeTabFocus();//切换焦点
+                                fnMove();       //轮播
+                            },options.intervalTime);
+                        }).trigger("mouseleave");//刚开始就触发mouseleave事件
+                    }
+                });
+            }
+        }
+        //其他效果
+    });
+})(jQuery);
+
+$(function () {
+    $(".c1008-row0-CBanner").slideToTop({
+        slideCon:".c1008-row0-CBanner_pics",        //必选参数
+        tabCon:".c1008-row0-CBanner_tabs",          //可选参数
+        autoPlay:true,      //可选参数
+        slideTime:1000,     //可选参数
+        intervalTime:2500   //可选参数
+    });
+
+    $(".testMoveCon").slideToTop({
+        slideCon:".testMoveUl",        //必选参数
+        autoPlay:true,      //可选参数
+        slideTime:600,     //可选参数
+        intervalTime:1500   //可选参数
+    });
+    $(".testMoveCon2").slideToTop({
+        slideCon:".testMoveUl",        //必选参数
+        autoPlay:true,      //可选参数
+        slideTime:600,     //可选参数
+        intervalTime:2500   //可选参数
+    });
+
+
+    $(".testMoveCon3").slideToTop({
+        slideCon:".testMoveTable",        //必选参数
+        autoPlay:true,      //可选参数
+        slideTime:600,     //可选参数
+        intervalTime:2500   //可选参数
+    });
+
+});
+
+
+
+</script>
+
+
+</html>
